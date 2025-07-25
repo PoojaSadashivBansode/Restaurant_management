@@ -1,0 +1,253 @@
+/* General Styling for the Body */
+/* Navigation Bar Styling */
+nav {
+    background-color: #00796b; /* Teal background for the menu */
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed; /* Fix the menu at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Make sure it stays above other content */
+}
+
+nav a {
+    color: white; /* White text color for menu links */
+    font-size: 1.2rem; /* Font size for the menu items */
+    font-weight: bold;
+    margin: 0 20px; /* Space out the menu items */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block;
+    padding: 10px 0;
+}
+
+
+
+/* Add a bit of padding to the body to avoid content being hidden under the fixed nav */
+body {
+    padding-top: 70px; /* Adjust this value if the menu height changes */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 0; /* Adjust padding for smaller screens */
+    }
+
+    nav a {
+        font-size: 1rem; /* Smaller font size on mobile */
+        margin: 0 10px; /* Less spacing on smaller screens */
+    }
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    text-align: center; /* Ensures multi-line text is centered */
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9; /* Optional: Light background for clarity */
+}
+p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+body {
+    font-family: 'Poppins', sans-serif; /* Uses Poppins font */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e3fdfd, #ffe6fa); /* Light gradient background */
+    color: #333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column; /* Stack all content vertically */
+    height: 100%; /* Full height to allow vertical stacking */
+}
+
+/* Container for aligning content */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+    flex-direction: column; /* Stack content vertically */
+    width: 100%;
+    padding: 20px;
+}
+
+/* Form container with card-like style */
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    width: 100%;
+    max-width: 600px; /* Max width for the form */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Title Styling */
+h1 {
+    font-family: 'Playfair Display', serif; /* Serif font for headings */
+    font-size: 2.5rem;
+    color: #00796b; /* Teal color */
+    margin-bottom: 20px;
+}
+
+/* Subheading styling */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #00796b; /* Teal color */
+    margin-bottom: 1rem;
+}
+
+/* Fieldset styling for form sections */
+fieldset {
+    border: none;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f9f9f9; /* Light background for fields */
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    color: #00796b;
+    font-size: 1.2rem; /* Slightly larger text for the fieldset title */
+}
+
+/* Label styling for inputs */
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input fields and select dropdown styling */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Input focus state to improve user experience */
+input:focus, select:focus {
+    border-color: #00796b; /* Greenish color for focus */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Button styling */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #00796b;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for effects */
+}
+
+button:hover {
+    background-color: #004d40; /* Darker teal on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Contact Section */
+#contact-info {
+    margin-top: 30px;
+}
+
+#contact-info p {
+    margin-bottom: 10px;
+}
+
+#contact-info a {
+    color: #00796b;
+    text-decoration: none;
+}
+
+#contact-info a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Additional Section Styling */
+section {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Responsive Styles for Small Screens */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Slightly smaller title */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Slightly smaller subheading */
+    }
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #00796b;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #a7ffeb;
+}

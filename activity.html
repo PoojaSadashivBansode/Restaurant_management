@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Palace - Activities</title>
+    <link rel="stylesheet" href="ss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add styles to position the button at the center of the page */
+        .book-now-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .book-button {
+            background-color: #00796b;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <header class="activities-header">
+        <h1>Activities at Soul Palace</h1>
+        <p>Immerse yourself in experiences that soothe the soul</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="activity.html">Activities</a>
+        <a href="contact.html">Contact</a>
+        <a href="room.html">Room Booking</a>
+    </nav>
+
+    <section id="activities" class="section">
+        <h1>Discover Our Activities</h1>
+        <p>At Soul Palace, we offer a variety of activities designed to rejuvenate your mind and body. Connect with nature, unwind in luxury, and create unforgettable memories.</p>
+
+        <div class="activities-container">
+            <div class="activity-card">
+                <img src="s1.jpg" alt="Sauna" class="activity-image">
+                <div class="activity-content">
+                    <h3>Eco-Friendly Sauna</h3>
+                    <p>Relax and detoxify in our eco-friendly sauna with breathtaking views. <br><strong>Price: ₹800 per session</strong></p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img src="kayaking.jpg" alt="Kayaking" class="activity-image">
+                <div class="activity-content">
+                    <h3>Kayaking Adventures</h3>
+                    <p>Paddle through serene waters and connect with nature like never before.<br> <strong>Price: ₹1200 per hour</strong></p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img src="nature-walk.jpg" alt="Nature Walk" class="activity-image">
+                <div class="activity-content">
+                    <h3>Scenic Nature Walks</h3>
+                    <p>Take a guided stroll through picturesque trails and soak in natural beauty.<br> <strong>Price: ₹500 per person</strong></p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img src="yoga.jpg" alt="Outdoor Yoga" class="activity-image">
+                <div class="activity-content">
+                    <h3>Outdoor Yoga Sessions</h3>
+                    <p>Unite your mind and body in serene yoga sessions amidst nature.<br><strong>Price: ₹700 per session</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Centered "Book Now" button -->
+        <div class="book-now-container">
+            <button class="book-button" onclick="window.location.href='form.html'">Book Now</button>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Soul Palace. All rights reserved.</p>
+    </footer>
+</body>
+</html>

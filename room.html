@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking - Soul Palace</title>
+    <link rel="stylesheet" href="rs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        function updateTotalPrice() {
+            var roomPrice = document.getElementById('room').value;
+            var numRooms = document.getElementById('num-rooms').value;
+            var checkinDate = new Date(document.getElementById('checkin').value);
+            var checkoutDate = new Date(document.getElementById('checkout').value);
+            var timeDiff = checkoutDate - checkinDate;
+            var numNights = timeDiff / (1000 * 60 * 60 * 24);
+
+            if (numNights <= 0 || isNaN(numNights)) {
+                document.getElementById('total-amount').value = 'Invalid Dates';
+                return;
+            }
+
+            var totalPrice = roomPrice * numRooms * numNights;
+            document.getElementById('total-amount').value = '₹' + totalPrice.toLocaleString('en-IN');
+        }
+
+        function validateField(input, regex, errorId, errorMessage) {
+            let errorSpan = document.getElementById(errorId);
+            if (!regex.test(input.value.trim()) || input.value.trim() === "") {
+                errorSpan.textContent = errorMessage;
+                input.style.borderColor = "red";
+            } else {
+                errorSpan.textContent = "";
+                input.style.borderColor = "#ddd";
+            }
+        }
+
+        function validateForm(event) {
+            event.preventDefault();
+            let isValid = true;
+
+            validateField(document.getElementById('name'), /^[a-zA-Z-' ]{2,}$/, 'nameError', 'Enter a valid name.');
+            validateField(document.getElementById('email'), /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'emailError', 'Enter a valid email.');
+            validateField(document.getElementById('phone'), /^[0-9]{10}$/, 'phoneError', 'Enter a valid 10-digit phone number.');
+
+            document.querySelectorAll('.error').forEach(error => {
+                if (error.textContent !== "") isValid = false;
+            });
+
+            if (isValid) {
+                document.getElementById('booking-form').style.display = 'none';
+                document.getElementById('confirmation-message').style.display = 'block';
+            }
+        }
+
+        function goBack() {
+            document.getElementById('confirmation-message').style.display = 'none';
+            document.getElementById('booking-form').style.display = 'block';
+            document.getElementById('roomBookingForm').reset();
+            document.getElementById('total-amount').value = "";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <br><br>
+        <h1>Room Booking - Soul Palace</h1>
+        <p>Your peaceful getaway awaits.</p>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="activity.html">Activities</a>
+        <a href="contact.html">Contact</a>
+        <a href="room.html">Room Booking</a>
+    </nav>
+
+    <section id="booking-form" class="section">
+        <h2>Book Your Stay</h2>
+        <form id="roomBookingForm" action="room_booking.php" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required oninput="validateField(this, /^[a-zA-Z-' ]{2,}$/, 'nameError', 'Enter a valid name.')">
+            <span id="nameError" class="error"></span>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required oninput="validateField(this, /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'emailError', 'Enter a valid email.')">
+            <span id="emailError" class="error"></span>
+
+            <label for="phone">Contact Number:</label>
+            <input type="text" id="phone" name="phone" required oninput="validateField(this, /^[0-9]{10}$/, 'phoneError', 'Enter a valid 10-digit phone number.')">
+            <span id="phoneError" class="error"></span>
+
+            <label for="checkin">Check-in Date:</label>
+            <input type="date" id="checkin" name="checkin" required onchange="updateTotalPrice()">
+
+            <label for="checkout">Check-out Date:</label>
+            <input type="date" id="checkout" name="checkout" required onchange="updateTotalPrice()">
+
+            <label for="room">Select Room Type:</label>
+            <select id="room" name="room" onchange="updateTotalPrice()" required>
+                <option value="3000">Single Room - ₹3,000/night</option>
+                <option value="4500">Double Room - ₹4,500/night</option>
+                <option value="7500">Suite - ₹7,500/night</option>
+            </select>
+
+            <label for="num-rooms">Number of Rooms:</label>
+            <input type="number" id="num-rooms" name="num-rooms" min="1" max="10" value="1" onchange="updateTotalPrice()" required>
+
+            <label>Total Amount to Pay:</label>
+            <input type="text" id="total-amount" name="total-amount" readonly>
+
+            <button type="submit">Book Now</button>
+        </form>    
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Soul Palace. All rights reserved.</p>
+    </footer>
+</body>
+</html>

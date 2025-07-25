@@ -1,0 +1,175 @@
+.activities-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nature-header.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.activities-header h1 {
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+}
+
+.activities-header p {
+    font-size: 2rem;
+    margin-top: 0;
+}
+.section p {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+.activities-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.activity-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.activity-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.activity-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.activity-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.activity-content h3 {
+    font-size: 1.8rem;
+    color: #00796b;
+    margin-bottom: 0.5rem;
+}
+
+.activity-content p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    color: white;
+    background-color: #00796b;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #004d40;
+}
+
+/* Animations */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info, .contact-form {
+        flex: 1 1 100%;
+    }
+}
+/* Navigation Bar Styling */
+nav {
+    background-color: #00796b; /* Teal background */
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed; /* Fix the menu at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the menu stays above other content */
+    font-family: 'Poppins', sans-serif; /* Apply the same font */
+}
+
+nav a {
+    color: white; /* White text color for menu links */
+    font-size: 1.3rem; /* Font size for menu items */
+    font-weight: bold;
+    margin: 0 20px; /* Space out the menu items */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    font-family: 'Poppins', sans-serif; /* Ensure same font style */
+}
+
+nav a:hover {
+    color: #a7ffeb; /* Light teal hover effect */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 0; /* Adjust padding for smaller screens */
+    }
+
+    nav a {
+        font-size: 1rem; /* Smaller font size on mobile */
+        margin: 0 10px; /* Less spacing on smaller screens */
+    }
+}
+/* Footer Styling */
+footer {
+    /* White text */
+    padding: 15px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    font-family: 'Poppins', sans-serif; /* Ensure consistent font */
+    font-size: 1rem; /* Match font size with other pages */
+    font-weight: 400;
+}
+
+/* Ensure links in the footer match the theme */
+footer a {
+    color: #a7ffeb; /* Light teal */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
